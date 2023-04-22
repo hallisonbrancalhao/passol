@@ -1,9 +1,24 @@
 export class Produto {
+  static id = 0;
   constructor(
     public nome: string,
     public preco: number,
     public quantidade: number
-  ) {}
+  ) {
+    Produto.id++;
+  }
+
+  get html() {
+    return `
+      <tr>
+        <td>${this.nome}</td>
+        <td>${this.preco}</td>
+        <td>${this.quantidade}</td>
+        <td><button>x</button></td>
+
+      </tr>
+    `;
+  }
 
   calcula() {
     return this.preco * this.quantidade;

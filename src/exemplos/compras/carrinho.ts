@@ -10,6 +10,26 @@ export class Carrinho {
     }, 0);
   }
 
+  get html() {
+    const thead = `<thead>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+      `;
+    const tbody = document.createElement("tbody");
+    this.#itens.forEach((produto) => {
+      tbody.innerHTML += produto.html;
+    });
+    const tfoot = `
+      <tfoot>
+        <td></td>
+        <td></td>
+        <td>${this.total}</td>
+      </tfoot>
+    `;
+    return thead + tbody.innerHTML + tfoot;
+  }
+
   adiciona(...produtos: Produto[]) {
     this.#itens.push(...produtos);
   }
