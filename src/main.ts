@@ -7,9 +7,14 @@ import "./style.css";
 import { Produto, Carrinho } from "./exemplos/compras/index";
 
 const form = document.querySelector("form")!;
+
 form.onsubmit = (ev) => {
   ev.preventDefault();
   const data = new FormData(form);
-
-  console.log(ev);
+  const produto = new Produto(
+    data.get("nome").toString(),
+    +parseFloat(data.get("preco").toString()),
+    +parseFloat(data.get("preco").toString())
+  );
+  console.log("produto:", produto);
 };

@@ -20,8 +20,8 @@
     </label>
     <label>
       <span>Quantidade</span>
-      <input type="range" name="quantidade" required min="0" step="1" max="10" />
-      <output id="qntd"></output>
+      <input type="range" name="quantidade" required min="0" step="1" max="10" oninput="qtde.innerText = this.value" />
+      <output id="qtde"></output>
     </label>
     <button type="submit">Cadastrar</button>
   </form>
