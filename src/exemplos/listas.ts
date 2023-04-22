@@ -24,5 +24,16 @@ listaPessoas.forEach((pessoa) => console.log(pessoa));
 const pessoas = listaPessoas.map((...params) => log(...params));
 
 console.log("pessoas:", pessoas);
-
 console.table(listaPessoas);
+
+function pergunta() {
+  const nome = prompt("Qual seu nome?");
+  const idade = parseInt(prompt("Qual sua idade?") ?? "");
+
+  if (nome && !isNaN(idade)) {
+    listaPessoas.push({ nome, idade });
+    console.log("pergunta : listaPessoas:", listaPessoas);
+  }
+}
+
+pergunta();

@@ -11,4 +11,4 @@ const p1: Pessoa = {
 
 p1.nascimento = new Date("04/16/1999");
 
-console.log(p1);
+// console.log(p1);
