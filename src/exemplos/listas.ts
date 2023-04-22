@@ -33,6 +33,7 @@ function pergunta() {
   if (nome && !isNaN(idade)) {
     listaPessoas.push({ nome, idade });
     console.log("pergunta : listaPessoas:", listaPessoas);
+    document.body.append(JSON.stringify(listaPessoas));
   }
 }
 
